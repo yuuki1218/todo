@@ -14,11 +14,14 @@
                                 </a>
                             </div>
                             <div class="list-group">
-                                @foreach($folders as $folder)
-                                    <a href="{{ route('tasks.index', ['id' => $folder->id]) }}" class="{{ $current_folder_id === $folder->id ? 'active' : '' }}">
-                                        {{ $folder->title }}
-                                    </a>
-                                @endforeach
+                                <table class="table">
+                                    @foreach($folders as $folder)
+                                        <tr>
+                                            <th><a href="{{ route('tasks.index', ['id' => $folder->id]) }}" class="{{ $current_folder_id === $folder->id ? 'active' : '' }}">
+                                            {{ $folder->title }}
+                                            </a></th>
+                                    @endforeach
+                                </table>
                             </div>
                     </nav>
                 </div>
